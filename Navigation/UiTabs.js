@@ -1,4 +1,5 @@
 import React from "react";
+import {useState} from "react"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View, Text } from "react-native";
 import FoodList from "../Screens/FoodList";
@@ -6,9 +7,8 @@ import Setting from "../Screens/setting";
 import ProductGrid from "../Screens/ProductGrid";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-
+import Profile from "../Screens/Profile";
 const Tab = createBottomTabNavigator();
-
 const screenOptionsMenu = ({ route }) => ({
   headerShown: false,
   tabBarActiveTintColor: "red",
@@ -32,10 +32,12 @@ const screenOptionsMenu = ({ route }) => ({
   },
 });
 const UiTabs = () => {
+
   return (
     <Tab.Navigator screenOptions={screenOptionsMenu}>
-      <Tab.Screen name={"ProductGrid"} component={ProductGrid} />
       <Tab.Screen name={"FoodList"} component={FoodList} />
+      <Tab.Screen name={"ProductGrid"} component={ProductGrid} />
+      <Tab.Screen name={"Profile"} component={Profile} />
       <Tab.Screen name={"Setting"} component={Setting} />
     </Tab.Navigator>
   );

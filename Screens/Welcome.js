@@ -8,6 +8,7 @@ import {
   Image,
   ImageBackground,
   TouchableOpacity,
+  StatusBar,
 } from "react-native";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { ButtonUi } from "../component";
@@ -42,6 +43,8 @@ const Welcome = (props) => {
           marginHorizontal: 10,
         }}
       >
+        <StatusBar backgroundColor="white" barStyle="dark-content" />
+
         <Image
           style={{ width: 40, height: 40 }}
           source={require("../assets/fire.png")}
@@ -125,12 +128,24 @@ const Welcome = (props) => {
             marginTop: 5,
           }}
         >
-          <Text style={{ color: "#fff" }}>
-            Don't know what account type to use?
-          </Text>
-          <Text style={{ color: "#fff", textDecorationLine: "underline" }}>
-            Register!
-          </Text>
+          <TouchableOpacity
+            onPress={() => {
+              return navigate("FormRegister");
+            }}
+          >
+            <Text style={{ color: "#fff" }}>
+              Don't know what account type to use?
+            </Text>
+            <Text
+              style={{
+                color: "#fff",
+                textDecorationLine: "underline",
+                textAlign: "center",
+              }}
+            >
+              Register!
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </ImageBackground>

@@ -23,10 +23,9 @@ const App = () => {
         screenOptions={{
           headerShown: false,
         }}
-      >
-        <Stack.Screen name={"Welcome"} component={Welcome} />
-        <Stack.Screen name={"FormLogin"} component={FormLogin} />
-        <Stack.Screen name={"FormRegister"} component={FormRegister} />
+        >
+        
+       
         <Stack.Screen name={"UiTabs"} component={UiTabs} />
       </Stack.Navigator>
     </NavigationContainer>

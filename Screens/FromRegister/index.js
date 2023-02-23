@@ -13,7 +13,7 @@ import React from "react";
 import { useState } from "react";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { isValidEmail, isValidPassWord } from "../../Validation";
-const FormRegister = () => {
+const FormRegister = (props) => {
   const { height } = Dimensions.get("window");
   const [errorEmail, setErrorEmail] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
@@ -24,6 +24,9 @@ const FormRegister = () => {
     Password.length > 0 &&
     isValidEmail(Email) === true &&
     isValidPassWord(Password) == true;
+  const { navigation, route } = props;
+  // funtione Navigate
+  const { navigate, goBack } = navigation;
   return (
     <KeyboardAwareScrollView
       contentContainerStyle={{ height }}
@@ -34,6 +37,8 @@ const FormRegister = () => {
         paddingBottom: 100,
       }}
     >
+      <StatusBar backgroundColor="white" barStyle="dark-content" />
+
       <ImageBackground
         source={require("../../assets/background.png")}
         style={{ flex: 100 }}
@@ -170,7 +175,9 @@ const FormRegister = () => {
           >
             <TouchableOpacity
               disabled={isValidCheck() === false}
-              onPress={() => alert(`Email ${Email} PassWord ${Password}`)}
+              onPress={() => {
+                return navigate("UiTabs");
+              }}
               style={{
                 borderRadius: 10,
                 borderWidth: 1,
@@ -185,7 +192,7 @@ const FormRegister = () => {
                 alignItems: "center",
               }}
             >
-              <Text style={{ color: "#fff", fontSize: 18 }}>Login</Text>
+              <Text style={{ color: "#fff", fontSize: 18 }}>Register</Text>
             </TouchableOpacity>
 
             <Text style={{ fontSize: 15, color: "#000" }}>

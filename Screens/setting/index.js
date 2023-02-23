@@ -35,7 +35,6 @@ const Setting = () => {
             backgroundColor: "red",
             justifyContent: "center",
             alignItems: "center",
-            position: "",
           }}
         >
           <Text

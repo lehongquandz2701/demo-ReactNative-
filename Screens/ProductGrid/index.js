@@ -5,6 +5,7 @@ import {
   Image,
   TouchableOpacity,
   Alert,
+  StatusBar,
 } from "react-native";
 import React from "react";
 import { useState } from "react";
@@ -14,7 +15,14 @@ import Fivestar from "./Fivestar";
 const ProductGrid = () => {
   const [saveColor, setSaveColor] = useState(Product);
   return (
-    <View style={{ flex: 1, backgroundColor: "#fff" }}>
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: "#fff",
+        marginTop: StatusBar.currentHeight || 0,
+      }}
+    >
+      <StatusBar backgroundColor="white" barStyle="dark-content" />
       <FlatList
         style={{ marginTop: 5 }}
         data={saveColor}

@@ -37,6 +37,8 @@ const FormLogin = (props) => {
         paddingBottom: 100,
       }}
     >
+      <StatusBar backgroundColor="white" barStyle="dark-content" />
+
       <ImageBackground
         source={require("../../assets/background.png")}
         style={{ flex: 100 }}

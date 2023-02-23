@@ -36,6 +36,8 @@ const FoodList = (props) => {
         marginTop: StatusBar.currentHeight || 0,
       }}
     >
+      <StatusBar backgroundColor="white" barStyle="dark-content" />
+
       <View
         style={{
           marginTop: 40,
